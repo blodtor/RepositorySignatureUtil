@@ -1,0 +1,16 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<SendRequestRequest xmlns="urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.3">
+			<MessageData Id="SIGNED_BY_CALLER">
+				<MessageID>8b8278fb-4faa-4ad6-b54e-733bb9d2175c</MessageID>
+				<ReferenceMessageID>8b8278fb-4faa-4ad6-b54e-733bb9d2175c</ReferenceMessageID>
+				<MessagePrimaryContent>
+					<dicts:Request xmlns:dicts="urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/dictionaries/1.0.3">
+						<dicts:Dictionary>Agriculture</dicts:Dictionary>
+						<dicts:Paging pageNumber="1" pageLength="500"/>
+					</dicts:Request>
+				</MessagePrimaryContent>
+			</MessageData>
+		</SendRequestRequest>
+	</s:Body>
+</s:Envelope>

@@ -1,0 +1,15 @@
+/.idea/
+/logs/
+/.jpb/
+target/
+
+### Eclipse IDE
+.project
+.settings
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+

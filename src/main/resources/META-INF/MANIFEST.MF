@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.8.1
+Built-By: admin
+Build-Jdk: 17.0.3
+Class-Path: ../lib/xmlsec-2.3.0.jar ../lib/slf4j-api-1.7.32.jar ../lib/commons-co
+ dec-1.15.jar ../lib/woodstox-core-6.2.6.jar ../lib/stax2-api-4.2.1.jar ../lib/ja
+ karta.xml.bind-api-2.3.3.jar ../lib/jakarta.activation-api-1.2.2.jar ../lib/s
+ lf4j-simple-1.7.21.jar ../lib/bcprov-jdk15on-1.60.jar ../lib/ASN1P.jar ../lib/JC
+ P.jar ../lib/AdES-core.jar ../lib/asn1rt.jar ../lib/CAdES.jar ../lib/cpSSL.jar ../lib/
+ J6CF.jar ../lib/J6Oscar.jar ../lib/JCPRequest.jar ../lib/JCPRevCheck.jar ../lib/JCP
+ RevTools.jar ../lib/JCPxml.jar ../lib/JCryptoP.jar ../lib/Rutoken.jar ../lib/XAdES.
+ jar ../lib/XMLDSigRI.jar
+Main-Class: ru.gov.mcx.gispz.signservice.SignApplication
+

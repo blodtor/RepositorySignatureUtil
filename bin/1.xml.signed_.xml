@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Body xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<SendRequestRequest xmlns="urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/1.0.3">
+			<MessageData Id="SIGNED_BY_CALLER">
+				<MessageID>8b8278fb-4faa-4ad6-b54e-733bb9d2175c</MessageID>
+				<ReferenceMessageID>8b8278fb-4faa-4ad6-b54e-733bb9d2175c</ReferenceMessageID>
+				<MessagePrimaryContent>
+					<dicts:Request xmlns:dicts="urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/dictionaries/1.0.3">
+						<dicts:Dictionary>Agriculture</dicts:Dictionary>
+						<dicts:Paging pageLength="500" pageNumber="1"/>
+					</dicts:Request>
+				</MessagePrimaryContent>
+			</MessageData>
+			<InformationSystemSignature>
+				<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+					<ds:SignedInfo>
+						<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+						<ds:SignatureMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256"/>
+						<ds:Reference URI="#SIGNED_BY_CALLER">
+							<ds:Transforms>
+								<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+								<ds:Transform Algorithm="urn://smev-gov-ru/xmldsig/transform"/>
+							</ds:Transforms>
+							<ds:DigestMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256"/>
+							<ds:DigestValue>sQHz/eSOd4AqKVOfAqRLQwMGEz40+qadBqDoev/9T8s=</ds:DigestValue>
+						</ds:Reference>
+					</ds:SignedInfo>
+					<ds:SignatureValue>1YCb2JzWD8oGoc89TvOH+d6Mk1EIb8dPcPyOG7pHVrTCJfpZjrDq/I5dyde0Rn6JjY6fjUlGY5Lm9Mc+YkqHKQ==</ds:SignatureValue>
+					<ds:KeyInfo>
+						<ds:X509Data>
+							<ds:X509Certificate>MIIEIDCCA8ugAwIBAgIIEcXDiYfj9SIwDAYIKoUDBwEBAwIFADCBmzEYMBYGBSqFA2QBEg0xMjM0NTY3ODkwMTIzMRUwEwYFKoUDZAQSCjEyMzQ1Njc4OTAxCzAJBgNVBAoTAlJUMRUwEwYDVQQHDAzQnNC+0YHQutCy0LAxHDAaBgNVBAgMEzc3INCzLiDQnNC+0YHQutCy0LAxCzAJBgNVBAYTAlJVMRkwFwYDVQQDDBBibGFzdG9mZl9jYV90ZXN0MB4XDTIyMTAwNzAwMDAwMFoXDTMyMDEyNjIxMDAwMFowgYgxGDAWBgUqhQNkARINMTA2Nzc2MDYzMDY4NDEVMBMGBSqFA2QEEgo3NzA4MDc1NDU0MRwwGgYDVQQIDBM3NyDQsy4g0JzQvtGB0LrQstCwMQswCQYDVQQGEwJSVTEqMCgGA1UEAwwh0JzQmNCd0KHQldCb0KzQpdCe0Jcg0KDQntCh0KHQmNCYMGYwHwYIKoUDBwEBAQEwEwYHKoUDAgIkAAYIKoUDBwEBAgIDQwAEQJwgNfu4h9+7Lj7qmLi0WpbdO1ORQzSC1lqcG94ZbR6NvYCNlT2wwZjriKi2lPltkFzMBa3dyZnUxUz2WFKKXwyjggH5MIIB9TCBywYDVR0jBIHDMIHAgBRvo6OvCfKvmL+8Ib3aw0miBTVlJaGBoaSBnjCBmzEYMBYGBSqFA2QBEg0xMjM0NTY3ODkwMTIzMRUwEwYFKoUDZAQSCjEyMzQ1Njc4OTAxCzAJBgNVBAoTAlJUMRUwEwYDVQQHDAzQnNC+0YHQutCy0LAxHDAaBgNVBAgMEzc3INCzLiDQnNC+0YHQutCy0LAxCzAJBgNVBAYTAlJVMRkwFwYDVQQDDBBibGFzdG9mZl9jYV90ZXN0ggRfQBKIMCcGA1UdIAQgMB4wCAYGKoUDZHEBMAgGBiqFA2RxAjAIBgYqhQNkcQMwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwIwDAYFKoUDZHIEAwIBADB/BgUqhQNkcAR2MHQMG0NyeXB0b1BybyBKQ1AgKDUuMC40MjExOS1BKQwbQ3J5cHRvUHJvIEpDUCAoNS4wLjQyMTE5LUEpDBtDcnlwdG9Qcm8gSkNQICg1LjAuNDIxMTktQSkMG0NyeXB0b1BybyBKQ1AgKDUuMC40MjExOS1BKTAOBgNVHQ8BAf8EBAMCBPAwJgYFKoUDZG8EHQwbQ3J5cHRvUHJvIEpDUCAoNS4wLjQyMTE5LUEpMB0GA1UdDgQWBBRAxgjdX/qwn1sQJm0ksGMFqTiR7TAMBggqhQMHAQEDAgUAA0EAwnXnhshfmZQmeES26sUUX6OoXJfi+UwJ9o8JZq33GUDn1Q7MYDLd0OEkKkhw66rN0P8oxFgzaerOHV7/d4td2A==</ds:X509Certificate>
+						</ds:X509Data>
+					</ds:KeyInfo>
+				</ds:Signature>
+			</InformationSystemSignature>
+		</SendRequestRequest>
+	</s:Body>
+</s:Envelope>
