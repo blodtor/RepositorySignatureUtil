@@ -33,6 +33,9 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Сервис подписания
+ */
 public class SignApplication {
     private static final SignService signService = new SignService();
     private static final String ZERNO_NS = "urn://x-artefacts-mcx-gov-ru/fgiz-zerno/api/ws/types/";

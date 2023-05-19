@@ -11,7 +11,9 @@ import java.security.AccessController;
 import java.security.PrivilegedExceptionAction;
 
 
-
+/**
+ * Класс инициализирующий Apache Santurio
+ */
 public class XmlDSignTools {
 
     public XmlDSignTools() {

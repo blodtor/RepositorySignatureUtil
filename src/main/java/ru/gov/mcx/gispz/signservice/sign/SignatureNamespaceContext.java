@@ -3,6 +3,9 @@ package ru.gov.mcx.gispz.signservice.sign;
 import javax.xml.namespace.NamespaceContext;
 import java.util.Iterator;
 
+/**
+ * Контекст пространства имён xmldsig
+ */
 public class SignatureNamespaceContext implements NamespaceContext {
 
     public static final String XMLDSIG_NS = "http://www.w3.org/2000/09/xmldsig#";

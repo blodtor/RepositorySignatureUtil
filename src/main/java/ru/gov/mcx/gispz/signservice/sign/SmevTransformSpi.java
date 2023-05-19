@@ -87,28 +87,6 @@ public class SmevTransformSpi extends TransformSpi {
     }
 
 
-    public XMLSignatureInput enginePerformTransform(XMLSignatureInput argInput,
-                                                    OutputStream argOutput, Transform argTransform) throws IOException,
-        CanonicalizationException, InvalidCanonicalizerException,
-        TransformationException, ParserConfigurationException, SAXException {
-
-        process(argInput.getOctetStream(), argOutput);
-        XMLSignatureInput result = new XMLSignatureInput((byte[]) null);
-        result.setOutputStream(argOutput);
-        return result;
-
-    }
-
-
-    protected XMLSignatureInput enginePerformTransform(XMLSignatureInput argInput,
-                                                       Transform argTransform) throws IOException, CanonicalizationException,
-        InvalidCanonicalizerException, TransformationException,
-        ParserConfigurationException, SAXException {
-
-        return enginePerformTransform(argInput);
-    }
-
-
     protected XMLSignatureInput enginePerformTransform(XMLSignatureInput argInput)
         throws IOException, CanonicalizationException,
         InvalidCanonicalizerException, TransformationException,
@@ -121,7 +99,12 @@ public class SmevTransformSpi extends TransformSpi {
         return new XMLSignatureInput(postTransformData);
     }
 
-
+    /**
+     * Преобразование пространства имён
+     * @param argSrc
+     * @param argDst
+     * @throws TransformationException
+     */
     public void process(InputStream argSrc, OutputStream argDst) throws TransformationException {
 
         DebugOutputStream debugStream = null;

@@ -21,7 +21,9 @@ import javax.xml.xpath.*;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 
-
+/**
+ * Класс реализующий подписание
+ */
 public class SignService {
 
     public static final String EDS_ERROR_SIGNATURE_INVALID = "Ошибка проверки ЭП: Нарушена целостность ЭП";
@@ -57,7 +59,9 @@ public class SignService {
     public SignService() {
     }
 
-
+    /**
+     * Инициализация ключей из контейнера
+     */
     public void init() {
         if (certificate != null && privateKey != null)
             return;
@@ -74,8 +78,17 @@ public class SignService {
         }
     }
 
+    /**
+     * Подпись элемента
+     * @param doc - исходный документ
+     * @param element2Sign - элемент, который необходимо подписать
+     * @param privateKey - приватный ключ
+     * @param certificate - сертификат
+     * @return - подписаный документ
+     * @throws SignatureProcessingException
+     */
     protected Element sign(Document doc, Element element2Sign, PrivateKey privateKey, X509Certificate certificate) throws SignatureProcessingException {
-        Element signature = signXMLDSig(doc, element2Sign, privateKey == null ? this.privateKey : privateKey, certificate == null ? this.certificate : certificate, null, false);
+        Element signature = signXMLDSig(doc, element2Sign, privateKey == null ? this.privateKey : privateKey, certificate == null ? this.certificate : certificate, false);
         if (signature.getOwnerDocument() == doc) {
             return signature;
         }
@@ -84,7 +97,17 @@ public class SignService {
         }
     }
 
-    protected Element signXMLDSig(Document argDocument, Element element2Sign, PrivateKey argPrivateKey, X509Certificate argCertificate, String argSignatureId, boolean enveloped) throws SignatureProcessingException {
+    /**
+     * Подпись элемента
+     * @param argDocument - исходный документ
+     * @param element2Sign - элемент, который необходимо подписать
+     * @param argPrivateKey - приватный ключ
+     * @param argCertificate - сертификат
+     * @param enveloped - втроенная подпись
+     * @return - подписаный элемент
+     * @throws SignatureProcessingException
+     */
+    protected Element signXMLDSig(Document argDocument, Element element2Sign, PrivateKey argPrivateKey, X509Certificate argCertificate, boolean enveloped) throws SignatureProcessingException {
         try {
             Element _element2Sign = element2Sign != null ? element2Sign : argDocument.getDocumentElement();
             String referenceURI = _element2Sign.getAttribute("Id");
@@ -143,6 +166,14 @@ public class SignService {
         }
     }
 
+    /**
+     * Валидация подписи документа
+     * @param signedContent - подписаный элемент
+     * @param detachedSignature - подпись
+     * @return - если подпись корректная возвращается сертификат
+     * @throws SignatureProcessingException
+     * @throws SignatureValidationException
+     */
     public X509Certificate validateXMLDSigDetachedSignature(Element signedContent, Element detachedSignature) throws SignatureProcessingException, SignatureValidationException {
         Document tmpDocContent = documentBuilder.get().newDocument();
         Element cutContent = (Element) tmpDocContent.importNode(signedContent, true);
@@ -162,6 +193,14 @@ public class SignService {
         }
     }
 
+    /**
+     * Валидация подписи документа
+     * @param argSignedContent - подписаный элемент
+     * @param argSignatureElement - подпись
+     * @return - если подпись корректная возвращается сертификат
+     * @throws SignatureValidationException
+     * @throws DocumentIsNotSignedException
+     */
     protected X509Certificate validateXMLDSig(Element argSignedContent, Element argSignatureElement) throws SignatureValidationException, DocumentIsNotSignedException {
         if (argSignedContent == null) {
             throw new DocumentIsNotSignedException("Подписанный XML-фрагмент не передан.");

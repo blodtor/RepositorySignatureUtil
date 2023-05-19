@@ -23,6 +23,11 @@ import java.io.StringWriter;
  */
 public class XML {
 
+    /**
+     * Преобразоварие DOM узла в строку
+     * @param doc - узел
+     * @return - строка
+     */
     public static String xmlDocumentToString(Node doc) {
         try {
             StringWriter sw = new StringWriter();
@@ -41,6 +46,12 @@ public class XML {
         }
     }
 
+    /**
+     * Преобразование XML документа в строку
+     * @param xml - исходный документ
+     * @return - преобразованный в строку документ
+     * @throws TransformerException
+     */
     public static String convertXmlToOneLine(String xml) throws TransformerException {
         // linearize xml
         final String xslt =
@@ -73,7 +84,14 @@ public class XML {
         return stringWriter.toString();
     }
 
-
+    /**
+     * Получить элемент по аттрибуту с учетом пространства имён
+     * @param namespaceURI - пространство имён
+     * @param root - корневой элемент
+     * @param path - путь к элементу
+     * @return Element или null, если элемент не найден
+     * @throws XPathExpressionException
+     */
     public static Element getAttrNS(String namespaceURI, Element root, String ... path) throws XPathExpressionException {
         Element element = null;
         if (root.hasAttribute("Id"))
@@ -87,7 +105,12 @@ public class XML {
         return element;
     }
 
-
+    /**
+     * Преобразование строки в XML документ
+     * @param xml - исходная строка
+     * @return - документ
+     * @throws Exception
+     */
     public static Document parseXML(String xml) throws Exception {
         xml = convertXmlToOneLine(xml);
 
@@ -100,6 +123,12 @@ public class XML {
         return builder.parse(new ByteArrayInputStream(xml.getBytes()));
     }
 
+    /**
+     * Запись DOM документа в поток
+     * @param doc
+     * @param output
+     * @throws TransformerException
+     */
     public static void writeXml(Document doc, OutputStream output) throws TransformerException {
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
