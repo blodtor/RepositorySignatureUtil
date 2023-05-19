@@ -174,15 +174,46 @@ public class SignApplication {
         return (X509Certificate) certFactory.generateCertificate(inputStream);
     }
 
+    /**
+     * Класс для запроса к сервису подписания
+     */
     static class SignRequest {
+        /**
+         * Обрабатываемое сообщение
+         */
         public String message;
+        /**
+         * Путь к обрабатываемому файлу
+         */
         public String filename;
+        /**
+         * Действие
+         * подпись (SIGN), валидация (VALIDATE)
+         */
         public String action;
+        /**
+         * Наименование контейнера
+         */
         public String containerName;
+        /**
+         * Тип контейнера
+         */
         public String containerType;
+        /**
+         * Пароль контейнера
+         */
         public String containerPw;
+        /**
+         * Приватный ключ
+         */
         public String privateKey;
+        /**
+         * Сертификат
+         */
         public String certificate;
+        /**
+         * Версия АПИ
+         */
         public String apiVersion;
 
         public SignRequest() {

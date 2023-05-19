@@ -18,7 +18,7 @@ import java.io.StringWriter;
 
 
 /**
- * Утилиты XML для облегчения жизни
+ * Утилитный класс для работы с XML
  *
  */
 public class XML {

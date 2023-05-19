@@ -25,13 +25,29 @@ import java.security.cert.X509Certificate;
  * Класс реализующий подписание
  */
 public class SignService {
-
+    /**
+     * Константа, текст ошибки проверки ЭП
+     */
     public static final String EDS_ERROR_SIGNATURE_INVALID = "Ошибка проверки ЭП: Нарушена целостность ЭП";
+    /**
+     * Пространство имён идентифицирующее GOST R 34.11-2012 algorithm with 256-bit key
+     */
     public static final String DIGEST_METHOD = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256";
-
+    /**
+     * Пространство имён идентифицирующее GOST R 34.10-2012 algorithm with 256-bit key
+     */
     public static final String XMLDSIG_SIGN_METHOD = "urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256";
+    /**
+     * Преобразование канонизации, но пространства имен с префиксом "dsig"
+     */
     public static final String XMLDSIG_DETACHED_TRANSFORM_METHOD = Transforms.TRANSFORM_C14N_EXCL_OMIT_COMMENTS;
+    /**
+     * Пространство имён xmldsig
+     */
     public static final String XMLDSIG_ENVELOPED_TRANSFORM_METHOD = Transforms.TRANSFORM_ENVELOPED_SIGNATURE;
+    /**
+     * Пространство имён WSSecurity
+     */
     public static final String WSSU_NS = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd";
 
 
@@ -45,8 +61,6 @@ public class SignService {
         }
     });
 
-
-    public static final String SIGNED_BY_CALLER = "SIGNED_BY_CALLER";
 
     private String ksContainer;
     private String ksContainerType;
@@ -299,22 +313,42 @@ public class SignService {
         }
     }
 
+    /**
+     * установить значение наименование контейнера
+     * @param ksContainer - наименование контейнера
+     */
     public void setKsContainer(String ksContainer) {
         this.ksContainer = ksContainer;
     }
 
+    /**
+     * установить значение тип контейнера
+     * @param ksContainerType - тип контейнера
+     */
     public void setKsContainerType(String ksContainerType) {
         this.ksContainerType = ksContainerType;
     }
 
+    /**
+     * установить значение пароль контейнера
+     * @param ksContainerPw - пароль контейнера
+     */
     public void setKsContainerPw(String ksContainerPw) {
         this.ksContainerPw = ksContainerPw;
     }
 
+    /**
+     * Установить значение сертификата
+     * @param certificate - сертификат
+     */
     public void setCertificate(X509Certificate certificate) {
         this.certificate = certificate;
     }
 
+    /**
+     * Установить значение приватного ключа
+     * @param privateKey - приватный ключ
+     */
     public void setPrivateKey(PrivateKey privateKey) {
         this.privateKey = privateKey;
     }

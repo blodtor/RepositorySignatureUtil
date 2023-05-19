@@ -18,6 +18,9 @@ action - подписание\валидация (SIGN\VALIDATE), если не 
 java -jar sign-service-1.0.0-jar-with-dependencies.jar "message=1.xml" "action=SIGN" "container_name=XXXXXXXXXXXX"
 java -jar sign-service-1.0.0-jar-with-dependencies.jar "message=1.xml.signed.xml" "action=VALIDATE"
 
+В папке bin есть собранное приложение и примеры xml
+файл 1.xml - исходное сообщение
+файл 1.xml.signed.xml - пример подписанного сообщения
 
 База знаний КриптоПро https://support.cryptopro.ru/index.php?/Knowledgebase/List
 AltLinux Wiki - установка сертфиката https://www.altlinux.org/КриптоПро#Установка_сертификата
